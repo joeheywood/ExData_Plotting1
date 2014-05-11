@@ -1,13 +1,18 @@
-tidy_save <- function(){
+# The functions below can be used to unzip and tidy the data, then run the analysis.
+# See project guide for more details.
+
+#dest variable below is the filepath for the zipped download for example:
+# C:/Users/Joe/Downloads/exdata-data-household_power_consumption.zip
+
+tidy_save <- function(dest){
   require(data.table)
   tdir <- tempdir()
-  unzip('C:/Users/Joe/Downloads/exdata-data-household_power_consumption.zip', exdir=tdir)
+  unzip(dest, exdir=tdir)
   f <- fread(file.path(tdir, 'household_power_consumption.txt'))
-  f <- f[as.Date(f$Date, format=("%d/%m/%Y")) %in% c(as.Date('2007-02-01'),as.Date('2007-02-02')), ]
-  f <- as.data.frame(f)
-  x <- paste(f$Date, f$Time)
-  #save(x, file='thisisbollocks.rda')
-  f$dt <- strptime(x, "%d/%m/%Y %H:%M:%S")
+  f <- f[as.Date(f$Date, format=("%d/%m/%Y")) %in% c(as.Date('2007-02-01'),as.Date('2007-02-02')), ] #separate out the dates we want.
+  f <- as.data.frame(f) # coerce to data.frame
+  x <- paste(f$Date, f$Time) 
+  f$dt <- strptime(x, "%d/%m/%Y %H:%M:%S") # add the datetime variable
   saveRDS(f, 'electric.rds')
 }
 
