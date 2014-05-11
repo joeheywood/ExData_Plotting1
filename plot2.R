@@ -1,3 +1,4 @@
+# e here refers to the data.frame saved at electric.rds - see project guide for more details
 plot2 <- function(e){
   print('huh?')
   png(file='plot2.png')

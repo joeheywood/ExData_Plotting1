@@ -1,4 +1,4 @@
-
+# e here refers to the data.frame saved at electric.rds - see project guide for more details
 plot4 <- function(e){
   png(file='plot4.png')
   par(mfrow = c(2, 2), mar = c(4, 4, 3, 4), oma = c(1, 1, 2, 0))

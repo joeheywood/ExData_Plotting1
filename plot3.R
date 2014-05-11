@@ -1,3 +1,4 @@
+# e here refers to the data.frame saved at electric.rds - see project guide for more details
 plot3 <- function(e){
   png(file='plot3.png')
   with(e,{ 
