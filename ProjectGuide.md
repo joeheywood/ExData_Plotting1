@@ -45,6 +45,6 @@ Plot 4
 
 I'm pretty sure I could have got the `mar` commmand to work better here. But I ran out of time I'm afraid!
 
-![The first plot we had to do!](plot3.png) 
+![The first plot we had to do!](plot4.png) 
 
 
