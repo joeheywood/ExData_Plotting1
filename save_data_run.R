@@ -23,7 +23,7 @@ runAnalysis <- function(){
   source('plot4.R')
   e <- readRDS('electric.rds')
   plot1(e)
-  plot1(e)
+  plot2(e)
   plot3(e)
   plot4(e)
 }
